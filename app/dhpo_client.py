@@ -133,12 +133,12 @@ class EClaimLinkClient:
             error_message=r.errorMessage
         )
 
-    def set_transaction_downloaded(self, field_id: str) -> SetTransactionDownloadedResponseModel:
-        """Mark a transaction as downloaded by field ID."""
+    def set_transaction_downloaded(self, file_id: str) -> SetTransactionDownloadedResponseModel:
+        """Mark a transaction as downloaded by file ID."""
         r = self.service.SetTransactionDownloaded(
             login=self.login,
             pwd=self.password,
-            fieldId=field_id
+            fileId=file_id
         )
         return SetTransactionDownloadedResponseModel(
             result=r.SetTransactionDownloadedResult,
